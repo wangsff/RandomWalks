@@ -1,0 +1,120 @@
+------------------------------------------------------------------------
+
+				MRW Cosegmentation demo software
+				Public release v1.0 (5 Sep. 2015)
+
+------------------------------------------------------------------------
+
+This software can be used only for research purposes.
+
+Authors:            Chulwoo Lee
+					Won-Dong Jang
+					Jae-Young Sim
+					Chang-Su Kim
+
+
+Project home page:	http://mcl.korea.ac.kr/~chulwoo/research/MRWCS/
+
+
+------------------------------------------------------------------------
+ Contents
+------------------------------------------------------------------------
+
+The package comprises these functions
+
+- ./datasets		: contains test data and loading scripts.
+- ./functions		: various sub-routines written by authors.
+- ./library			: external library. Please see requirements section.
+- ./results			: pre-computed data and resultant segmentation 
+					  will be saved here.
+- load_*.m			: pre-computes { image database / feature map
+					  intra- and inter-image graph / node dissimilarity}.
+					  This takes most of processing time.
+- load_settings.m	: provides algorithm parameters used in each scripts.					  
+- MRW_IS_CS.m		: performs `MRW-IS' and `MRW-CS'
+- RUNME.m			: demo script
+
+
+------------------------------------------------------------------------
+ Installation
+------------------------------------------------------------------------
+
+- You first download test data and unzip it to './datasets.' For
+  example, iCoseg dataset (CMU_Cornell_iCoseg_dataset.zip) can be
+  downloaded from http://chenlab.ece.cornell.edu/projects/touch-coseg/
+  
+- You also need external algorithms. Please see next section.
+
+- Run RUNME.m
+
+
+------------------------------------------------------------------------
+ Requirements
+------------------------------------------------------------------------
+
+- Windows x64
+- MATLAB R2015a with Image Processing Toolbox
+- VLFeat 0.9.19
+	- Download: http://www.vlfeat.org/download.html
+	- Extract to './library/VLFeat'
+- mexDenseSIFT
+	- A sub-component of LabelTransfer algorithm
+	- Download: http://people.csail.mit.edu/celiu/LabelTransfer
+	  /code.html
+	- Path: './library/mexDenseSIFT'
+- Global and Efficient Self-Similarity
+	- Download: http://calvin.inf.ed.ac.uk/software
+	  /global-and-efficient-self-similarity/
+	- Path: './library/selfsim'
+- SLIC Superpixels
+	- Download: http://ivrl.epfl.ch/supplementary_material
+	  /RK_SLICSuperpixels/index.html
+	- Path: './library/SLIC_mex'
+- Bresenham line drawing algorithm
+	- Download: http://www.mathworks.com/matlabcentral/fileexchange
+	  /28190-bresenham-optimized-for-matlab/content/bresenham.m
+	- Path: './library/bresenham.m'
+- Converting Color Representations
+	- Pascal Getreuer
+	- Download: http://www.getreuer.info/home/colorspace
+	- Path: './library/colorspace.m'
+- Calculates the distance between sets of vectors
+	- A sub-component of Piotr's Computer Vision Matlab Toolbox
+	- Download: http://vision.ucsd.edu/~pdollar/toolbox/doc/index.html
+	- Path: './library/pdist2.m'
+
+
+------------------------------------------------------------------------
+ Change log
+------------------------------------------------------------------------
+
+- v1.0  (5 Sep. 2015)
+	- Initial release
+
+
+------------------------------------------------------------------------
+ References
+------------------------------------------------------------------------
+
+Please cite this paper if you use this software in a publication.
+
+[1] Chulwoo Lee, Won-Dong Jang, Jae-Young Sim, and Chang-Su Kim, 
+¡§Multiple random walkers and their application to image cosegmentation,¡¨ 
+in Proc. IEEE International Conference on Computer Vision and Pattern 
+Recognition (CVPR), Boston, USA, pp. 123-456, Jun. 2015.
+
+
+------------------------------------------------------------------------
+ Feedback
+------------------------------------------------------------------------
+
+If you have any comment, suggestion, or question, please feel free to
+contact Chulwoo Lee at chulwoo(at)mcl(dot)korea(dot)ac(dot)kr
+
+
+------------------------------------------------------------------------
+ ToDo
+------------------------------------------------------------------------
+
+- Unify load_dsim_intra*.m
+
